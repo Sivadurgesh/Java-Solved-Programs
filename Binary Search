@@ -1,0 +1,43 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Ravi {
+   public int binary (int arr[],int n,int target){
+    int lst=0;
+    int hst=n-1;
+    while(lst<=hst)
+    {
+      int  mid=(lst+hst)/2;
+        
+        if(arr[mid]==target)
+        {
+            return mid;
+        }
+        else if(arr[mid]<target)
+        {
+            lst=mid+1;
+        }
+        else
+        {
+            hst=mid-1;
+        }
+    }
+    return -1;}
+}
+class Main
+{
+    public static void main(String[] args)
+    {
+        int arr[]={9,12,24,32,45,56,67};
+        Ravi obj = new Ravi();
+        
+       if( obj.binary(arr,7,22)==-1)
+       {
+           System.out.println("Element not found");
+       }
+       else
+       {
+           System.out.println(obj.binary(arr,7,24));
+       }
+    }
+}
